@@ -1,0 +1,53 @@
+lt
+ string2 = "\n"
+ B1 = ''.join(char for char in string1 if char not in string2)
+
+ HH=str(B1)
+
+ VB=lineas_texto[p*15+5]
+ string1 = VB
+ string2 = ",.VES"
+ result = ''.join(char for char in string1 if char not in string2)
+ string1 = result
+ string2 = "\n"
+ B0 = ''.join(char for char in string1 if char not in string2)
+
+ VB=float(B0)
+
+
+ PDV=lineas_texto[p*15+7]
+ string1 = PDV
+ string2 = ","
+ result = ''.join(char for char in string1 if char not in string2)
+ string1 = result
+ string2 = "\n"
+ B2 = ''.join(char for char in string1 if char not in string2)
+
+ PDV=float(B2)
+
+ Q=lineas_texto[p*15+10]
+ string1 = Q
+ string2 = "\n"
+ B3 = ''.join(char for char in string1 if char not in string2)
+ QQ=float(B3)
+
+
+ 
+ datos_totales=[HH, QQ, VB, HH]
+ euross_vendidos=VB/PDD
+ precio_vendidos= euross_vendidos/QQ
+ datos_totales1 = [HH, QQ, euross_vendidos, precio_vendidos]
+
+ datos[p][0] = HH
+ datos[p][1] = QQ
+ datos[p][2] = round(euross_vendidos,2)
+ datos[p][3] = round(precio_vendidos)
+ monto = round(QQ*valor, 2)
+ ganancia = round(datos[p][2]- monto,2)
+
+ HHH = list(HH)
+ 
+ s.write("\n"+ H[0:10]+"," + "%15s "  % BTC +"," +"%15s "  % valor + ","+  "%15s "  % PdC +","+ "%15s "  % monto +","+"%15s "  % (datos[p][1]) + "," + "%15s "  % (datos[p][2]) + "," + "%15s "  % (datos[p][3])+","+"%15s "  % ganancia +",") 
+ 
+ 
+#"%15s "  % (datos[p][0])
